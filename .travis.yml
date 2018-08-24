@@ -19,7 +19,7 @@ script:
 - cmake .
 - cmake --build .
 - cmake --build . --target package
-- doxygen -s -g Doxygen
+- doxygen Doxygen
 
 deploy:
   provider: pages
