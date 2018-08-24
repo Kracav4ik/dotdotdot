@@ -1,0 +1,33 @@
+language: cpp
+compiler: gcc
+dist: trusty
+
+before_install:
+- sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+- sudo apt-get update -qq
+
+install:
+- sudo apt-get install -qq g++-6
+- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
+
+addons:
+  apt:
+    packages:
+    - doxygen
+
+script:
+- cmake .
+- cmake --build .
+- cmake --build . --target package
+- doxygen -s -g Doxygen
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: master
+
+  script:
+  - curl -T print_ip-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -ukracav4ik:$BINTRAY_API_KEY "https://api.bintray.com/content/sthorgnst/otus-cpp/print_ip/$TRAVIS_BUILD_NUMBER/print_ip-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
