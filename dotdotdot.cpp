@@ -6,7 +6,11 @@
 namespace ns {
     template <typename T>
     void print_ip(T t);
-
+    /**
+     *
+     * \tparam T
+     * \param t
+     */
     template <typename T>
     void outListSame(const T& t) {
         bool flag = false;
