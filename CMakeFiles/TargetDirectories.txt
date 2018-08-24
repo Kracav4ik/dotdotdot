@@ -1,5 +1,0 @@
-/home/travis/build/Kracav4ik/dotdotdot/CMakeFiles/rebuild_cache.dir
-/home/travis/build/Kracav4ik/dotdotdot/CMakeFiles/package.dir
-/home/travis/build/Kracav4ik/dotdotdot/CMakeFiles/package_source.dir
-/home/travis/build/Kracav4ik/dotdotdot/CMakeFiles/print_ip.dir
-/home/travis/build/Kracav4ik/dotdotdot/CMakeFiles/edit_cache.dir
